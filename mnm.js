@@ -12,9 +12,9 @@ builder.failIfNotExists(wiresharkInclude, 'Could not find "%s" check WIRESHARK_I
 builder.appendUnique('CXXFLAGS', '-I' + wiresharkInclude);
 
 if(process.platform == 'darwin') {
-  builder.appendUnique('CXXFLAGS', [ '-I' + wiresharkInclude + '/macosx-support-libs/glib-2.31.8/' ]);
-  builder.appendUnique('CXXFLAGS', [ '-I' + wiresharkInclude + '/macosx-support-libs/glib-2.31.8/glib/' ]);
-  builder.appendUnique('CXXFLAGS', [ '-I' + wiresharkInclude + '/macosx-support-libs/glib-2.31.8/gmodule/' ]);
+  builder.appendUnique('CXXFLAGS', [ '-I' + wiresharkInclude + '/macosx-support-libs/glib-2.31.20/' ]);
+  builder.appendUnique('CXXFLAGS', [ '-I' + wiresharkInclude + '/macosx-support-libs/glib-2.31.20/glib/' ]);
+  builder.appendUnique('CXXFLAGS', [ '-I' + wiresharkInclude + '/macosx-support-libs/glib-2.31.20/gmodule/' ]);
 } else {
   var glibInclude = process.env["GLIB_INCLUDE_DIR"] || "/usr/include/glib-2.0/";
   builder.failIfNotExists(glibInclude, 'Could not find "%s" check GLIB_INCLUDE_DIR environment variable.');
